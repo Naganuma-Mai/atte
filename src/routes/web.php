@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\RestController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Auth::routes(['verify' => true]);
+
+Route::middleware('verified')->group(function () {
+    Route::get('/', [AttendanceController::class, 'index']);
+    // Route::get('/attendance', [AttendanceController::class, 'attendance']);
+    Route::get('/attendances/search/date', [AttendanceController::class, 'findByDate']);
+    Route::post('/attendances/create', [AttendanceController::class, 'store']);
+    Route::patch('/attendances/update', [AttendanceController::class, 'update']);
+    Route::post('/rests/create', [RestController::class, 'store']);
+    Route::patch('/rests/update', [RestController::class, 'update']);
+    Route::get('/user', [UserController::class, 'index']);
+    Route::get('/attendances/search/user', [AttendanceController::class, 'findByUser']);
 });

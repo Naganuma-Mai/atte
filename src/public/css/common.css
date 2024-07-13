@@ -1,0 +1,152 @@
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 450;
+    font-style: normal;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 15px 75px;
+    height: 88px;
+    /* max-width: 1230px; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; */
+}
+
+.header-utilities {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    /* color: #000; */
+    /* font-weight: bold; */
+    font-size: 32px;
+    margin: 0;
+    line-height: 58px;
+}
+
+/* .header-utilities nav {
+    width: 50%;
+} */
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .header-nav__item {
+    width: 25%;
+} */
+
+/* .header-nav-item {
+    margin-left: 40px;
+} */
+
+.header-nav__link {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 45px;
+   /* font-weight: bold; */
+}
+
+.header-nav__form {
+    display: inline-block;
+    margin-left: 45px;
+}
+
+.header-nav__button {
+    border: none;
+    padding: 0;
+    background: transparent;
+    /* color: #000; */
+    font-size: 16px;
+    cursor: pointer;
+    /* 改行しない（スペースあるのになぜか改行されてしまうので指定） */
+    white-space: pre;
+    display: inline-block;
+    /* font-weight: bold; */
+}
+
+.footer__inner {
+    margin: 0 auto;
+    padding: 10px 0;
+    /* height: 50px; */
+    max-width: 1230px;
+    text-align: center;
+}
+
+.footer__logo {
+    font-size: 12px;
+    /* line-height: 58px; */
+}
+
+/* ページネーション */
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.pagination li:not(.active) {
+    /* border: 1px solid #E0DFDE; */
+    border: 1px solid #E3E6E9;
+    background-color: #FFFFFF;
+    padding: 9px 16px;
+    /* padding: 10px 17px; */
+}
+
+/* .pagination li:not(:last-child) {
+    border-right: none;
+} */
+
+.pagination li:first-child {
+    border-radius: 5px 0 0 5px;
+    color: #909090;
+}
+
+.pagination li:last-child {
+    border-radius: 0 5px 5px 0;
+    color: #909090;
+}
+
+.pagination a {
+    color: #2384CF;
+    text-decoration: none;
+}
+
+.pagination__link {
+    text-decoration: none;
+}
+
+.active {
+    padding: 9px 16px;
+    /* padding: 10px 17px; */
+    border: 1px solid #2384CF;
+    background-color: #2384CF;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 480px) {
+    .header__inner {
+        padding: 15px 50px;
+        height: 10vh;
+    }
+
+    .header__logo {
+        font-size: 28px;
+        line-height: 30px;
+    }
+}

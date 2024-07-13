@@ -1,0 +1,85 @@
+.date__content {
+    margin: 0 auto;
+    padding: 43px 15px;
+    height: 655px;
+    /* max-width: 1230px; */
+    background: #F2F2F2;
+}
+
+.date-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 45px;
+    /* text-align: center; */
+    /* font-size: 35px; */
+}
+
+.date-heading__item {
+    margin: 0 18px;
+}
+
+.date-heading__text {
+    font-size: 21px;
+    margin: 0;
+}
+
+.search-form {
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+    /* vertical-align: middle; */
+}
+
+/* .search-form__item {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: top;
+} */
+
+.search-form__button-submit {
+    /* padding: 0; */
+    width: 35px;
+    height: 26px;
+    /* border: 1px solid #0000CD; */
+    border: 1px solid #214BE0;
+    background: #FFFFFF;
+    color: #214BE0;
+    cursor: pointer;
+    font-size: 20px;
+    /* text-align: center; */
+    /* vertical-align: middle; */
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.attendance-table {
+    margin: 30px auto 35px;
+    width: 90%;
+    text-align: left;
+}
+
+.attendance-table__inner {
+    width: 100%;
+    /* font-size: 20px; */
+}
+
+.attendance-table__row {
+    border-top: 1px solid #909090;
+    /* border-top: 1px solid #a9a9a9; */
+}
+
+/* .contact-table__header {
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+} */
+
+.attendance-table__header, .attendance-table__text {
+    width: 20%;
+    padding: 18px 0 18px 70px;
+    /* padding: 18px 40px; */
+    line-height: 30px;
+}
