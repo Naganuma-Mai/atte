@@ -83,3 +83,59 @@
     /* padding: 18px 40px; */
     line-height: 30px;
 }
+
+/* レスポンシブ */
+@media screen and (max-width: 480px) {
+    .date__content {
+        height: 85vh;
+        padding: 70px 15px;
+    }
+
+    .date-heading__item {
+        margin: 0 12px;
+    }
+
+    .date-heading__text {
+        font-size: 18px;
+    }
+
+    .search-form__button-submit {
+        width: 32px;
+        height: 23px;
+        font-size: 20px;
+    }
+
+    /* .attendance-table__inner {
+        writing-mode: vertical-lr;
+    } */
+/*
+    .attendance-table__row,
+    .attendance-table__header,
+    .attendance-table__text {
+        writing-mode: horizontal-tb;
+    } */
+
+    /* .attendance-table__header,
+    .attendance-table__text {
+        padding: 10px;
+        line-height: 15px;
+    } */
+
+    .attendance-table {
+        width: 95%;
+    }
+
+    .attendance-table__header,
+    .attendance-table__text {
+        width: 19%;
+        padding: 15px 0 15px 7px;
+        line-height: 20px;
+        font-size: 11px;
+        /* white-space: nowrap; */
+    }
+
+    .attendance-table__header:first-of-type,
+    .attendance-table__text:first-of-type {
+        width: 24%;
+    }
+}

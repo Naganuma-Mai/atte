@@ -14,11 +14,10 @@ button, input, select, textarea {
     margin: 0 auto;
     padding: 15px 75px;
     height: 88px;
-    /* max-width: 1230px; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* position: relative; */
 }
 
 .header-utilities {
@@ -28,21 +27,22 @@ button, input, select, textarea {
 }
 
 .header__logo {
-    /* color: #000; */
     /* font-weight: bold; */
     font-size: 32px;
     margin: 0;
-    line-height: 58px;
+    /* line-height: 58px; */
 }
 
 /* .header-utilities nav {
     width: 50%;
 } */
 
-.header-nav {
+.header-nav__list {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* background: #F2F2F2;
+    position: fixed; */
 }
 
 /* .header-nav__item {
@@ -83,20 +83,22 @@ button, input, select, textarea {
 .footer__inner {
     margin: 0 auto;
     padding: 10px 0;
-    /* height: 50px; */
-    max-width: 1230px;
-    text-align: center;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer__logo {
     font-size: 12px;
-    /* line-height: 58px; */
+    margin: 0;
 }
 
 /* ページネーション */
 .pagination {
     display: flex;
     justify-content: center;
+    align-items: center;
     list-style: none;
 }
 
@@ -139,7 +141,13 @@ button, input, select, textarea {
     color: #FFFFFF;
 }
 
+#btn {
+    display: none;
+}
+
+/* レスポンシブ */
 @media screen and (max-width: 480px) {
+/* @media screen and (max-width: 750px) { */
     .header__inner {
         padding: 15px 50px;
         height: 10vh;
@@ -147,6 +155,91 @@ button, input, select, textarea {
 
     .header__logo {
         font-size: 28px;
-        line-height: 30px;
+        line-height: 36px;
+    }
+
+    .footer__inner {
+        height: 5vh;
+    }
+
+    .footer__logo {
+        font-size: 10px;
+        /* line-height: 10px; */
+    }
+
+    #btn {
+        position: fixed;
+        top: 10px;
+        right: 25px;
+        width: 44px;
+        height: 44px;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #btn span {
+        display: block;
+        background-color: #000;
+        width: 36px;
+        height: 2px;
+        transition: all 0.5s ease;
+    }
+
+    /* #btn.on span {
+        background-color: #fff;
+    } */
+
+    #btn.on span:nth-of-type(1) {
+        transform: translateY(11px) rotate(45deg);
+    }
+
+    #btn.on span:nth-of-type(2) {
+        transform: scale(0);
+    }
+
+    #btn.on span:nth-of-type(3) {
+        transform: translateY(-12px) rotate(-45deg);
+    }
+
+    .header-nav__list {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        /* padding: 20px 0; */
+        transition: all 0.5s ease;
+        width: 100%;
+        height: 100vh;
+        top: -1000px;
+        left: 0;
+        background: #FFFFFF;
+        position: fixed;
+        margin: 0;
+    }
+
+    .header-nav__list.on {
+        top: 0;
+    }
+
+    .header-nav__form {
+        margin: 0;
+    }
+
+    .header-nav__link, .header-nav__button {
+        margin: 15px auto;
+    }
+
+    /* ページネーション */
+    .pagination li:not(.active) {
+        padding: 4px 11px;
+        font-size: 14px;
+    }
+
+    .active {
+        padding: 4px 11px;
+        font-size: 14px;
     }
 }

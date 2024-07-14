@@ -21,9 +21,15 @@
                 <p class="header__logo">
                     Atte
                 </p>
-                <nav>
-                    <ul class="header-nav">
-                        @if (Auth::check())
+                @if (Auth::check())
+                <div id="btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav class="header-nav">
+                    <ul id="menu" class="header-nav__list">
+                        <!-- @if (Auth::check()) -->
                         <li class="header-nav__item">
                             <a class="header-nav__link" href="/">ホーム</a>
                         </li>
@@ -46,9 +52,10 @@
                                 <button class="header-nav__button">ログアウト</button>
                             </form>
                         </li>
-                        @endif
+                        <!-- @endif -->
                     </ul>
                 </nav>
+                @endif
             </div>
         </div>
     </header>
@@ -62,6 +69,24 @@
             <small class="footer__logo">Atte, inc.</small>
         </div>
     </footer>
+
+    <script>
+        const btn = document.getElementById("btn");
+        const menu = document.getElementById("menu");
+        const links = document.querySelectorAll("#menu a");
+
+        btn.addEventListener("click", () => {
+            btn.classList.toggle("on");
+            menu.classList.toggle("on");
+        });
+
+        links.forEach((link) => {
+            link.addEventListener("click", () => {
+                btn.classList.toggle("on");
+                menu.classList.toggle("on");
+            });
+        });
+    </script>
 </body>
 
 </html>

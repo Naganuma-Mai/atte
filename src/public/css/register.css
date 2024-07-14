@@ -2,7 +2,6 @@
     margin: 0 auto;
     padding: 70px 15px;
     height: 655px;
-    /* max-width: 1230px; */
     background: #F2F2F2;
 }
 
@@ -31,7 +30,7 @@
 
 .form__input--text input {
     padding: 15px;
-    width: 100%;
+    width: 350px;
     height: 43px;
     border: 2px solid #909090;
     color: #909090;
@@ -53,7 +52,7 @@
 .form__button-submit {
     /* margin-top: 30px; */
     padding: 10px 40px;
-    width: 100%;
+    width: 350px;
     height: 43px;
     border: 2px solid #214BE0;
     background: #214BE0;
@@ -83,4 +82,43 @@
     color: #214BE0;
     text-decoration: none;
     font-size: 14px;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 480px) {
+    /* .login__content {
+        padding: 50px 15px;
+    } */
+
+    .register__content {
+        height: 85vh;
+        padding: 50px 15px;
+    }
+
+    .register-form__heading {
+        font-size: 20px;
+    }
+
+    .form {
+        margin: 0 auto;
+        padding: 30px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .form__input--text input {
+        width: 300px;
+    }
+
+    .form__button-submit {
+        width: 300px;
+    }
+
+    .login__message {
+        font-size: 13px;
+    }
+
+    .login__button-link {
+        font-size: 13px;
+    }
 }

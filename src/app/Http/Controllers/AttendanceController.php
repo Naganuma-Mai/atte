@@ -81,21 +81,24 @@ class AttendanceController extends Controller
         //今回のユーザーの最新の勤怠データ(前回（前日以前）の勤怠データ)
         $old_attendance = Attendance::where('user_id', $user_id)->latest()->first();
 
-        //最新の勤怠データ（＝前回（前日以前）の勤怠データ）の勤務終了時間が空の場合
-        //（前回の勤務終了をしていない場合）
-        if(empty($old_attendance->work_end_time)) {
-            //勤務開始時間から日付を持ってくる
-            //勤務終了時間に23:59:59と入れる
+        //今回のユーザーの勤怠データがある場合
+        if($old_attendance) {
+            //最新の勤怠データ（＝前回（前日以前）の勤怠データ）の勤務終了時間が空の場合
+            //（前回の勤務終了をしていない場合）
+            if(empty($old_attendance->work_end_time)) {
+                //勤務開始時間から日付を持ってくる
+                //勤務終了時間に23:59:59と入れる
 
-            //最新の勤怠データの勤務開始時間
-            $old_work_start_time = new Carbon($old_attendance->work_start_time);
-            // $attendanceDay = $work_start_time->endOfDay();
+                //最新の勤怠データの勤務開始時間
+                $old_work_start_time = new Carbon($old_attendance->work_start_time);
+                // $attendanceDay = $work_start_time->endOfDay();
 
-            //最新の勤怠データの勤務開始時間の時刻を23:59:59にしたものをwork_end_timeに入れる
+                //最新の勤怠データの勤務開始時間の時刻を23:59:59にしたものをwork_end_timeに入れる
 
-            $old_attendance->update([
-                'work_end_time' => $old_work_start_time->endOfDay()
-            ]);
+                $old_attendance->update([
+                    'work_end_time' => $old_work_start_time->endOfDay()
+                ]);
+            }
         }
 
         $attendance = [
