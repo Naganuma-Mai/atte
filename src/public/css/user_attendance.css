@@ -1,7 +1,8 @@
 .user__content {
     margin: 0 auto;
     padding: 43px 15px;
-    height: 655px;
+    /* height: 655px; */
+    height: 83vh;
     /* max-width: 1230px; */
     background: #F2F2F2;
 }
@@ -41,9 +42,34 @@
 }
 
 /* レスポンシブ */
+@media screen and (max-width: 768px) {
+    .user__content {
+        padding: 100px 15px;
+    }
+
+    .attendance-table__header,
+    .attendance-table__text {
+        padding: 15px 0 15px 20px;
+    }
+
+}
+/* @media screen and (max-width: 768px) {
+    .attendance-table__header,
+    .attendance-table__text {
+        width: 19%;
+        padding: 15px 0 15px 7px;
+        line-height: 20px;
+        font-size: 11px;
+    }
+
+    .attendance-table__header:first-of-type,
+    .attendance-table__text:first-of-type {
+        width: 24%;
+    }
+} */
+
 @media screen and (max-width: 480px) {
     .user__content {
-        height: 85vh;
         padding: 50px 15px;
     }
 

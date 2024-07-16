@@ -13,14 +13,17 @@ button, input, select, textarea {
 .header__inner {
     margin: 0 auto;
     padding: 15px 75px;
-    height: 88px;
-    /* display: flex; */
+    /* height: 88px; */
+    height: 11vh;
+    display: flex;
     /* justify-content: center; */
-    /* align-items: center; */
+    align-items: center;
+    /* justify-content: space-between; */
     /* position: relative; */
 }
 
 .header-utilities {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -83,7 +86,8 @@ button, input, select, textarea {
 .footer__inner {
     margin: 0 auto;
     padding: 10px 0;
-    height: 40px;
+    /* height: 40px; */
+    height: 6vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,20 +150,24 @@ button, input, select, textarea {
 }
 
 /* レスポンシブ */
-@media screen and (max-width: 480px) {
-/* @media screen and (max-width: 750px) { */
+@media screen and (max-width: 768px) {
     .header__inner {
         padding: 15px 50px;
-        height: 10vh;
+    }
+
+    #btn {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__inner {
+        padding: 15px 50px;
     }
 
     .header__logo {
         font-size: 28px;
         line-height: 36px;
-    }
-
-    .footer__inner {
-        height: 5vh;
     }
 
     .footer__logo {

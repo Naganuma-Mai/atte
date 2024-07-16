@@ -1,7 +1,8 @@
 .stamp__content {
     margin: 0 auto;
     padding: 50px 15px;
-    height: 655px;
+    /* height: 655px; */
+    height: 83vh;
     background: #F2F2F2;
 }
 
@@ -55,9 +56,22 @@
 } */
 
 /* レスポンシブ */
+@media screen and (max-width: 768px) {
+    .stamp__content {
+        padding: 100px 15px;
+    }
+
+    .form {
+        width: 38%;
+    }
+
+    .form__button-submit {
+        height: 130px;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .stamp__content {
-        height: 85vh;
         padding: 70px 15px;
     }
 

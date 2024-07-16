@@ -1,7 +1,8 @@
 .login__content {
     margin: 0 auto;
     padding: 70px 15px;
-    height: 655px;
+    /* height: 655px; */
+    height: 83vh;
     /* max-width: 1230px; */
     background: #F2F2F2;
 }
@@ -15,7 +16,7 @@
 .form {
     margin: 0 auto;
     padding: 30px 100px;
-    width: 45%;
+    width: 100%;
     text-align: center;
 }
 
@@ -93,24 +94,26 @@
 } */
 
 /* レスポンシブ */
+@media screen and (max-width: 768px) {
+    .login__content {
+        padding: 100px 15px;
+    }
+    /* .form {
+        padding: 30px 0;
+    } */
+}
+
 @media screen and (max-width: 480px) {
     /* .login__content {
         padding: 50px 15px;
     } */
-
-    .login__content {
-        height: 85vh;
-    }
 
     .login-form__heading {
         font-size: 20px;
     }
 
     .form {
-        margin: 0 auto;
         padding: 30px 0;
-        width: 100%;
-        text-align: center;
     }
 
     .form__input--text input {

@@ -1,7 +1,8 @@
 .user__content {
     margin: 0 auto;
     padding: 43px 15px;
-    height: 655px;
+    /* height: 655px; */
+    height: 83vh;
     background: #F2F2F2;
 }
 
@@ -66,10 +67,39 @@
 }
 
 /* レスポンシブ */
+@media screen and (max-width: 768px) {
+    .user__content {
+        padding: 100px 15px;
+    }
+
+    .user-table__header,
+    .user-table__text {
+        padding: 15px 0 15px 20px;
+    }
+
+    .user-table__header:nth-of-type(1),
+    .user-table__text:nth-of-type(1) {
+        width: 30%;
+    }
+
+    .user-table__header:nth-of-type(2),
+    .user-table__text:nth-of-type(2) {
+        width: 45%;
+    }
+
+    .user-table__header:nth-of-type(3),
+    .user-table__text:nth-of-type(3) {
+        width: 25%;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .user__content {
-        height: 85vh;
-        padding: 50px 15px;
+        padding: 40px 15px;
+    }
+
+    .user-heading {
+        margin-bottom: 40px;
     }
 
     .user-heading__text {
