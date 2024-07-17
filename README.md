@@ -71,10 +71,7 @@ DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 ```
-> mailtrapを使用する場合、以下の****部分は、下記サイトを参考に自分のアカウントのコードをコピーして貼り付けてください。
-https://fikaweb.jp/dev/mailtrap/
-
-> 他のメールサーバーを使用する場合は、それぞれのメールサーバーに合わせて環境構築を行ってください。
+> mailtrapを使用する場合、以下の****部分は、下記サイトを参考に自分のアカウントのコードをコピーして貼り付けてください。<br>https://fikaweb.jp/dev/mailtrap/<br>他のメールサーバーを使用する場合は、それぞれのメールサーバーに合わせて環境構築を行ってください。
 
 ```text
 MAIL_MAILER=****
