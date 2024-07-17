@@ -37,32 +37,22 @@ AtteはWeb上で打刻や勤怠データの閲覧ができる勤怠管理シス�
 - MySQL10.3.39-MariaDB
 
 ## テーブル設計
-| TH | TH |
-| ---- | ---- |
-| TD | TD |
-| TD | TD |
+
+<img width="641" alt="table" src="https://github.com/user-attachments/assets/303ab459-445b-4c7c-8ab7-ac80ac3d15f2">
 
 ## ER 図
 
-![alt](erd.png)
+<img width="680" alt="er" src="https://github.com/user-attachments/assets/cd3c4b50-494b-45a7-8c2d-302ea29ec884">
 
 ## 環境構築
 
 **Docker ビルド**
 
-1. `git clone git@github.com:estra-inc/confirmation-test-contact-form.git`
+1. `git clone git@github.com:Naganuma-Mai/atte.git`
 2. DockerDesktop アプリを立ち上げる
 3. `docker-compose up -d --build`
 
-> _Mac の M1・M2 チップの PC の場合、`no matching manifest for linux/arm64/v8 in the manifest list entries`のメッセージが表示されビルドができないことがあります。
-> エラーが発生する場合は、docker-compose.yml ファイルの「mysql」内に「platform」の項目を追加で記載してください_
-
-```bash
-mysql:
-    platform: linux/x86_64(この文追加)
-    image: mysql:8.0.26
-    environment:
-```
+> MySQLは、OSによって起動しない場合があるのでそれぞれのPCに合わせてdocker-compose.ymlファイルを編集してください。
 
 **Laravel 環境構築**
 
@@ -81,8 +71,9 @@ DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 ```
-> mailtrapを使用しますので、以下の****部分は、下記サイトを参考に自分のアカウントのコードをコピーして貼り付けてください。
+> mailtrapを使用する場合、以下の****部分は、下記サイトを参考に自分のアカウントのコードをコピーして貼り付けてください。
 https://fikaweb.jp/dev/mailtrap/
+> 他のメールサーバーを使用する場合は、それぞれのメールサーバーに合わせて環境構築を行ってください。
 
 ```text
 MAIL_MAILER=****
