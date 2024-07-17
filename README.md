@@ -2,6 +2,8 @@
 
 AtteはWeb上で打刻や勤怠データの閲覧ができる勤怠管理システムです
 
+<img width="1440" alt="stamp" src="https://github.com/user-attachments/assets/cf8a9fb3-b830-4523-a2f7-75d0c5097c05">
+
 ## 作成した目的
 
 人事評価のため
