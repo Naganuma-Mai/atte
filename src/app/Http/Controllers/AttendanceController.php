@@ -132,7 +132,6 @@ class AttendanceController extends Controller
         //今日の勤務時間（秒）
         $work_time = $work_start_time->diffInSeconds($work_end_time) - $rest_total;
 
-        //ここから確認
         //勤務時間に応じた休憩時間を満たしているか確認
         switch($work_time) {
             //勤務時間が8時間＝28800秒を超える場合
@@ -140,7 +139,7 @@ class AttendanceController extends Controller
                 //休憩時間は1時間以上必要
                 //休憩時間が1時間＝3600秒未満の場合、メッセージを表示し、勤務終了の処理はしない
                 if($rest_total < 3600) {
-                    //休憩時間の残り
+                    //休憩時間の残り（秒）
                     $remaining_time = 3600 - $rest_total;
                     // dd($remaining_time);
                     $remaining_hour = floor($remaining_time / 3600);
@@ -167,10 +166,11 @@ class AttendanceController extends Controller
                 //休憩時間は45分以上必要
                 //休憩時間が45分＝2700秒未満の場合、メッセージを表示し、勤務終了の処理はしない
                 if($rest_total < 2700) {
-                    //休憩時間の残り
+                    //休憩時間の残り（秒）
                     $remaining_time = 2700 - $rest_total;
                     $remaining_min = floor(($remaining_time % 3600) / 60);
                     $remaining_sec = $remaining_time % 60;
+
                     return redirect('/')->with('message', '残り' . $remaining_min . '分' . $remaining_sec . '秒の休憩が必要です');
                     // return redirect('/')->with('message', '勤務時間が6時間を超えているため、45分以上の休憩が必要です');
                 }
