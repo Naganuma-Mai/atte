@@ -9,6 +9,14 @@
     <div class="stamp__heading">
         {{ Auth::user()->name }}さんお疲れ様です！
     </div>
+    <!-- 休憩時間のバリデーションのエラーメッセージ表示 -->
+    <div class="stamp__alert">
+        @if (session('message'))
+        <div class="stamp__alert--danger">
+            {{ session('message') }}
+        </div>
+        @endif
+    </div>
     <div class="stamp_inner">
         <form class="form" action="/attendances/create" method="post">
             @csrf

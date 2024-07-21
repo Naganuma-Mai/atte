@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-require '../vendor/autoload.php';
+// require '../vendor/autoload.php';
 
 use Illuminate\Http\Request;
 use App\Models\Attendance;
@@ -119,13 +119,68 @@ class AttendanceController extends Controller
 
         $user_id = Auth::id();
 
-        $attendance = [
+        //休憩時間のバリデーション
+        //今回のユーザーの最新の勤怠データ(今日の勤怠データ)
+        $attendance = Attendance::where('user_id', $user_id)->latest()->first();
+
+        //今日の勤務開始時間
+        $work_start_time = new Carbon($attendance->work_start_time);
+        //勤務終了時間を現在時刻とする（データベースにはまだ入れない）
+        $work_end_time = Carbon::now();
+        //今日の休憩時間の合計（秒）
+        $rest_total = $attendance->getRestTotal();
+        //今日の勤務時間（秒）
+        $work_time = $work_start_time->diffInSeconds($work_end_time) - $rest_total;
+
+        //ここから確認
+        //勤務時間に応じた休憩時間を満たしているか確認
+        switch($work_time) {
+            //勤務時間が8時間＝28800秒を超える場合
+            case $work_time > 28800:
+                //休憩時間は1時間以上必要
+                //休憩時間が1時間＝3600秒未満の場合、メッセージを表示し、勤務終了の処理はしない
+                if($rest_total < 3600) {
+                    //休憩時間の残り
+                    $remaining_time = 3600 - $rest_total;
+                    // dd($remaining_time);
+                    $remaining_hour = floor($remaining_time / 3600);
+                    $remaining_min = floor(($remaining_time % 3600) / 60);
+                    $remaining_sec = $remaining_time % 60;
+                    //時間と分が両方とも0の場合（秒のみの場合）
+                    // if($remaining_hour === 0 && $remaining_min === 0) {
+                    //     $message = '残り' . $remaining_sec . '秒の休憩が必要です';
+                    //時間が0の場合は、分と秒のみ表示する
+                    if($remaining_hour == 0) {
+                        $message = '残り' . $remaining_min . '分' . $remaining_sec . '秒の休憩が必要です';
+                    //時間が0でない場合は、時間も表示する
+                    } else {
+                        $message = '残り' . $remaining_hour . '時間' . $remaining_min . '分' . $remaining_sec . '秒の休憩が必要です';
+                    }
+
+                    return redirect('/')->with('message', $message);
+                    // return redirect('/')->with('message', '勤務時間が8時間を超えているため、1時間以上の休憩が必要です');
+                }
+                break;
+
+            //勤務時間が6時間＝21600秒を超える場合
+            case $work_time > 21600:
+                //休憩時間は45分以上必要
+                //休憩時間が45分＝2700秒未満の場合、メッセージを表示し、勤務終了の処理はしない
+                if($rest_total < 2700) {
+                    //休憩時間の残り
+                    $remaining_time = 2700 - $rest_total;
+                    $remaining_min = floor(($remaining_time % 3600) / 60);
+                    $remaining_sec = $remaining_time % 60;
+                    return redirect('/')->with('message', '残り' . $remaining_min . '分' . $remaining_sec . '秒の休憩が必要です');
+                    // return redirect('/')->with('message', '勤務時間が6時間を超えているため、45分以上の休憩が必要です');
+                }
+                break;
+        }
+
+        //勤務終了の処理をする
+        $attendance->update([
             'work_end_time' => Carbon::now()
-        ];
-
-        Attendance::where('user_id', $user_id)->latest()->first()->update($attendance);
-
-        // Attendance::find($request->id)->update($attendance);
+        ]);
 
         return redirect('/');
     }
