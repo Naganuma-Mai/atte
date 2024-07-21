@@ -101,9 +101,3 @@ php artisan key:generate
 ```bash
 php artisan migrate
 ```
-
-7. シーディングの実行
-
-```bash
-php artisan db:seed
-```
