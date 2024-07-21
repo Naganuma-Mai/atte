@@ -34,7 +34,7 @@
                             <a class="header-nav__link" href="/">ホーム</a>
                         </li>
                         <li class="header-nav__item">
-                            <form class="header-nav__form" action="/attendances/search/date" method="get">
+                            <form class="header-nav__form" action="/attendance" method="get">
                                 @csrf
                                 <div class="form__item">
                                     <input type="hidden" name="target_date" value="today">

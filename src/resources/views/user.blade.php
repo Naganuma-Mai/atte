@@ -25,7 +25,7 @@
                     {{ $user->email }}
                 </td>
                 <td class="user-table__text">
-                    <form class="form" action="/attendances/search/user" method="get">
+                    <form class="form" action="/user/attendance" method="get">
                         @csrf
                         <div class="form__item">
                             <input type="hidden" name="user_id" value="{{ $user->id }}">

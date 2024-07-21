@@ -8,7 +8,7 @@
 <div class="date__content">
     <div class="date-heading">
         <div class="date-heading__item">
-            <form class="search-form" action="/attendances/search/date" method="get">
+            <form class="search-form" action="/attendance" method="get">
                 @csrf
                 <div class="search-form__item">
                     <input type="hidden" name="target_date" value="yesterday">
@@ -21,7 +21,7 @@
             <p class="date-heading__text">{{ $target_date }}</p>
         </div>
         <div class="date-heading__item">
-            <form class="search-form" action="/attendances/search/date" method="get">
+            <form class="search-form" action="/attendance" method="get">
                 @csrf
                 <div class="search-form__item">
                     <input type="hidden" name="target_date" value="tomorrow">

@@ -20,12 +20,11 @@ use App\Http\Controllers\UserController;
 
 Route::middleware('verified')->group(function () {
     Route::get('/', [AttendanceController::class, 'index']);
-    // Route::get('/attendance', [AttendanceController::class, 'attendance']);
-    Route::get('/attendances/search/date', [AttendanceController::class, 'findByDate']);
+    Route::get('/attendance', [AttendanceController::class, 'findByDate']);
     Route::post('/attendances/create', [AttendanceController::class, 'store']);
     Route::patch('/attendances/update', [AttendanceController::class, 'update']);
     Route::post('/rests/create', [RestController::class, 'store']);
     Route::patch('/rests/update', [RestController::class, 'update']);
     Route::get('/user', [UserController::class, 'index']);
-    Route::get('/attendances/search/user', [AttendanceController::class, 'findByUser']);
+    Route::get('/user/attendance', [AttendanceController::class, 'findByUser']);
 });
