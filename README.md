@@ -12,6 +12,7 @@ AtteはWeb上で打刻や勤怠データの閲覧ができる勤怠管理シス�
 
 - 開発環境：http://localhost/
 - phpMyAdmin:：http://localhost:8080/
+- MailHog：http://localhost:8025/
 
 ## 他のリポジトリ
 
@@ -34,6 +35,7 @@ AtteはWeb上で打刻や勤怠データの閲覧ができる勤怠管理シス�
 
 ### 補足説明
 
+- メール認証機能では、MailHogを使用しています
 - 勤務開始処理の際に、前回の勤怠データで勤務終了の打刻がない場合、勤務終了時間に23:59:59と入れるようにしています
 - 勤務終了処理の際に、労働基準法に基づき、勤務時間に応じた必要な休憩時間に満たない場合は、勤務終了処理は行わずメッセージを表示するようにしています<br>（勤務時間が6時間を超えて8時間までの場合：45分の休憩が必要、勤務時間が8時間を超える場合：1時間の休憩が必要）
 
@@ -59,7 +61,7 @@ AtteはWeb上で打刻や勤怠データの閲覧ができる勤怠管理シス�
 2. DockerDesktop アプリを立ち上げる
 3. `docker-compose up -d --build`
 
-> MySQLは、OSによって起動しない場合があるのでそれぞれのPCに合わせてdocker-compose.ymlファイルを編集してください。
+> MySQL等は、OSによって起動しない場合があるのでそれぞれのPCに合わせてdocker-compose.ymlファイルを編集してください。
 
 **Laravel 環境構築**
 
@@ -70,7 +72,9 @@ AtteはWeb上で打刻や勤怠データの閲覧ができる勤怠管理シス�
 
 ```text
 APP_NAME=Atte
+```
 
+```text
 DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
@@ -78,16 +82,16 @@ DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 ```
-> mailtrapを使用する場合、以下の****部分は、下記サイトを参考に自分のアカウントのコードをコピーして貼り付けてください。<br>https://fikaweb.jp/dev/mailtrap/<br>他のメールサーバーを使用する場合は、それぞれのメールサーバーに合わせて環境構築を行ってください。
 
 ```text
-MAIL_MAILER=****
-MAIL_HOST=****
-MAIL_PORT=****
-MAIL_USERNAME=****
-MAIL_PASSWORD=****
-MAIL_ENCRYPTION=****
-MAIL_FROM_ADDRESS=info@example.com
+MAIL_MAILER=smtp
+MAIL_HOST=mailhog
+MAIL_PORT=1025
+MAIL_USERNAME=test
+MAIL_PASSWORD=pass
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=test@example.com
+MAIL_FROM_NAME="${APP_NAME}"
 ```
 
 5. アプリケーションキーの作成
