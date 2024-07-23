@@ -145,6 +145,14 @@ button, input, select, textarea {
     color: #FFFFFF;
 }
 
+.three__dots {
+    color: #909090;
+}
+
+.sp {
+    display: none;
+}
+
 #btn {
     display: none;
 }
@@ -249,5 +257,13 @@ button, input, select, textarea {
     .active {
         padding: 4px 11px;
         font-size: 14px;
+    }
+
+    .pc {
+        display: none;
+    }
+
+    .sp {
+        display: block;
     }
 }

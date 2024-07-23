@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-require '../vendor/autoload.php';
+// require '../vendor/autoload.php';
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
