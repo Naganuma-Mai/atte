@@ -29,7 +29,6 @@
                 </div>
                 <nav class="header-nav">
                     <ul id="menu" class="header-nav__list">
-                        <!-- @if (Auth::check()) -->
                         <li class="header-nav__item">
                             <a class="header-nav__link" href="/">ホーム</a>
                         </li>
@@ -41,7 +40,6 @@
                                     <button class="header-nav__button" type="submit">日付一覧</button>
                                 </div>
                             </form>
-                            <!-- <a class="header-nav__link" href="/attendance">日付一覧</a> -->
                         </li>
                         <li class="header-nav__item">
                             <a class="header-nav__link" href="/user">ユーザー一覧</a>
@@ -52,7 +50,6 @@
                                 <button class="header-nav__button">ログアウト</button>
                             </form>
                         </li>
-                        <!-- @endif -->
                     </ul>
                 </nav>
                 @endif

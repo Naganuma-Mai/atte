@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-// require '../vendor/autoload.php';
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
@@ -36,8 +34,6 @@ class Attendance extends Model
         }
 
         return $rest_total;
-        // return $this->secToTime($rest_total);
-
     }
 
     public function getWorkTime()
@@ -47,8 +43,6 @@ class Attendance extends Model
         $work_time = $work_start_time->diffInSeconds($work_end_time) - $this->getRestTotal();
 
         return $work_time;
-        // return $this->secToTime($work_time);
-
     }
 
     public function secToTime($seconds)
@@ -80,54 +74,5 @@ class Attendance extends Model
 
         return $time;
     }
-
-    // public function scopeUserSearch($query, $user_id)
-    // {
-    //     if (!empty($user_id)) {
-    //         $query->where('user_id', $user_id);
-    //     }
-    // }
-
-    // public function scopeFirst_nameSearch($query, $keyword)
-    // {
-    //     if (!empty($keyword)) {
-    //         $query->where('first_name', 'like', '%' . $keyword . '%');
-    //     }
-    // }
-
-    // public function scopeLast_nameSearch($query, $keyword)
-    // {
-    //     if (!empty($keyword)) {
-    //         $query->where('last_name', 'like', '%' . $keyword . '%');
-    //     }
-    // }
-
-    // public function scopeEmailSearch($query, $keyword)
-    // {
-    //     if (!empty($keyword)) {
-    //         $query->where('email', 'like', '%' . $keyword . '%');
-    //     }
-    // }
-
-    // public function scopeGenderSearch($query, $gender)
-    // {
-    //     if (!empty($gender)) {
-    //         $query->where('gender', $gender);
-    //     }
-    // }
-
-    // public function scopeCategorySearch($query, $category_id)
-    // {
-    //     if (!empty($category_id)) {
-    //         $query->where('category_id', $category_id);
-    //     }
-    // }
-
-    // public function scopeDateSearch($query, $date)
-    // {
-    //     if (!empty($date)) {
-    //         $query->where('created_at', 'like', '%' . $date . '%');
-    //     }
-    // }
 
 }

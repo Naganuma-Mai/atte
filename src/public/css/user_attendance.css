@@ -1,16 +1,13 @@
 .user__content {
     margin: 0 auto;
     padding: 43px 15px;
-    /* height: 655px; */
     height: 83vh;
-    /* max-width: 1230px; */
     background: #F2F2F2;
 }
 
 .user-heading {
     margin-bottom: 45px;
     text-align: center;
-    /* font-size: 35px; */
 }
 
 .user-heading__text {
@@ -26,12 +23,10 @@
 
 .attendance-table__inner {
     width: 100%;
-    /* font-size: 20px; */
 }
 
 .attendance-table__row {
     border-top: 1px solid #909090;
-    /* border-top: 1px solid #a9a9a9; */
 }
 
 .attendance-table__header,
@@ -53,20 +48,6 @@
     }
 
 }
-/* @media screen and (max-width: 768px) {
-    .attendance-table__header,
-    .attendance-table__text {
-        width: 19%;
-        padding: 15px 0 15px 7px;
-        line-height: 20px;
-        font-size: 11px;
-    }
-
-    .attendance-table__header:first-of-type,
-    .attendance-table__text:first-of-type {
-        width: 24%;
-    }
-} */
 
 @media screen and (max-width: 480px) {
     .user__content {

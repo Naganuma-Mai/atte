@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-// require '../vendor/autoload.php';
-
 use Illuminate\Http\Request;
 use App\Models\Attendance;
 use App\Models\Rest;
@@ -31,7 +29,6 @@ class AttendanceController extends Controller
             // 最新の勤怠データの日付と今日の日付が同じ場合
             //（今日の勤務開始をしている場合）
             if($attendanceDay == $today) {
-                // && (empty($attendance->work_end_time))) {
                 // 最新の勤怠データ（＝今日）の勤務終了時間が空の場合
                 //（今日の勤務終了をしていない場合）
                 if(empty($attendance->work_end_time)) {
@@ -67,16 +64,11 @@ class AttendanceController extends Controller
             $status = "beforeWork";
         }
 
-        // dd($status);
         return view('stamp', compact('status'));
     }
 
     public function store()
     {
-        // dd(Auth::id());
-        // $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'first_tell', 'second_tell', 'third_tell', 'address', 'building', 'category_id', 'detail']);
-        // $attendance = $request->only(['user_id']);
-
         $user_id = Auth::id();
         //今回のユーザーの最新の勤怠データ(前回（前日以前）の勤怠データ)
         $old_attendance = Attendance::where('user_id', $user_id)->latest()->first();
@@ -91,7 +83,6 @@ class AttendanceController extends Controller
 
                 //最新の勤怠データの勤務開始時間
                 $old_work_start_time = new Carbon($old_attendance->work_start_time);
-                // $attendanceDay = $work_start_time->endOfDay();
 
                 //最新の勤怠データの勤務開始時間の時刻を23:59:59にしたものをwork_end_timeに入れる
 
@@ -109,14 +100,10 @@ class AttendanceController extends Controller
         Attendance::create($attendance);
 
         return redirect('/');
-        // return view('stamp', compact('attendance'));
     }
 
     public function update()
     {
-        // $attendance = $request->only(['work_end_time']);
-        // dd(Auth::id());
-
         $user_id = Auth::id();
 
         //休憩時間のバリデーション
@@ -141,13 +128,9 @@ class AttendanceController extends Controller
                 if($rest_total < 3600) {
                     //休憩時間の残り（秒）
                     $remaining_time = 3600 - $rest_total;
-                    // dd($remaining_time);
                     $remaining_hour = floor($remaining_time / 3600);
                     $remaining_min = floor(($remaining_time % 3600) / 60);
                     $remaining_sec = $remaining_time % 60;
-                    //時間と分が両方とも0の場合（秒のみの場合）
-                    // if($remaining_hour === 0 && $remaining_min === 0) {
-                    //     $message = '残り' . $remaining_sec . '秒の休憩が必要です';
                     //時間が0の場合は、分と秒のみ表示する
                     if($remaining_hour == 0) {
                         $message = '残り' . $remaining_min . '分' . $remaining_sec . '秒の休憩が必要です';
@@ -157,7 +140,6 @@ class AttendanceController extends Controller
                     }
 
                     return redirect('/')->with('message', $message);
-                    // return redirect('/')->with('message', '勤務時間が8時間を超えているため、1時間以上の休憩が必要です');
                 }
                 break;
 
@@ -172,7 +154,6 @@ class AttendanceController extends Controller
                     $remaining_sec = $remaining_time % 60;
 
                     return redirect('/')->with('message', '残り' . $remaining_min . '分' . $remaining_sec . '秒の休憩が必要です');
-                    // return redirect('/')->with('message', '勤務時間が6時間を超えているため、45分以上の休憩が必要です');
                 }
                 break;
         }
@@ -184,16 +165,6 @@ class AttendanceController extends Controller
 
         return redirect('/');
     }
-
-    // public function attendance()
-    // {
-    //     $target_date = Carbon::today()->format('Y-m-d');
-
-    //     $attendances = Attendance::with(['user', 'rests'])->whereDate('work_end_time', $target_date)->paginate(5);
-
-    //     return view('date', compact('attendances', 'target_date'));
-
-    // }
 
     public function findByDate(Request $request)
     {
@@ -211,42 +182,10 @@ class AttendanceController extends Controller
                 break;
         }
 
-        // $search_date = new Carbon($search_date);
-        // $search_date = $search_date->format('Y-m-d');
-
         $attendances = Attendance::with(['user', 'rests'])->whereDate('work_end_time', $target_date)->paginate(5);
-
-        // $attendances = Attendance::with('user')->DateSearch($search_date)->paginate(5);
-
-        // $target_date = $search_date;
 
         return view('date', compact('attendances', 'target_date'));
     }
-
-    // public function findByDate(Request $request)
-    // {
-    //     switch($request->search_date) {
-    //         case "yesterday":
-    //             $target_date = new Carbon($request->target_date);
-    //             $search_date = $target_date->subDay()->format('Y-m-d');
-    //             break;
-    //         case "tomorrow":
-    //             $target_date = new Carbon($request->target_date);
-    //             $search_date = $target_date->addDay()->format('Y-m-d');
-    //             break;
-    //     }
-
-    //     // $search_date = new Carbon($search_date);
-    //     // $search_date = $search_date->format('Y-m-d');
-
-    //     $attendances = Attendance::with(['user', 'rests'])->whereDate('work_end_time', $search_date)->paginate(5);
-
-    //     // $attendances = Attendance::with('user')->DateSearch($search_date)->paginate(5);
-
-    //     $target_date = $search_date;
-
-    //     return view('date', compact('attendances', 'target_date'));
-    // }
 
     public function findByUser(Request $request)
     {
@@ -256,44 +195,5 @@ class AttendanceController extends Controller
 
         return view('user_attendance', compact('attendances', 'user'));
     }
-    // public function index()
-    // {
-    //     //$todos = Todo::all();
-    //     $todos = Todo::with('category')->get();
-    //     $categories = Category::all();
-    //     // $message = $request->session()->get('message');
-    //     return view('index', compact('todos', 'categories'));
-    // }
-
-    // public function search(Request $request)
-    // {
-    //     $todos = Todo::with('category')->CategorySearch($request->category_id)->KeywordSearch($request->keyword)->get();
-    //     $categories = Category::all();
-
-    //     return view('index', compact('todos', 'categories'));
-    // }
-
-    // public function store(TodoRequest $request)
-    // {
-    //     $todo = $request->only(['category_id', 'content']);
-    //     Todo::create($todo);
-
-    //     return redirect('/')->with('message', 'Todoを作成しました');
-
-    //     // return redirect('/');
-    //     // return redirect()->route('/', ['message' => 'Todoを作成しました']);
-    //     // $message = "Todoを作成しました";
-    //     // return redirect()->route('/', compact('message'));
-    // }
-
-    // public function admin()
-    // {
-    //     // $contacts = Contact::with('category')->get();
-    //     $contacts = Contact::with('category')->paginate(7);
-    //     // $contacts = Contact::Paginate(7);
-    //     $categories = Category::all();
-
-    //     return view('admin', compact('contacts', 'categories'));
-    // }
 
 }

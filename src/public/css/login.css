@@ -1,14 +1,11 @@
 .login__content {
     margin: 0 auto;
     padding: 70px 15px;
-    /* height: 655px; */
     height: 83vh;
-    /* max-width: 1230px; */
     background: #F2F2F2;
 }
 
 .login-form__heading {
-    /* margin-bottom: 50px; */
     text-align: center;
     font-size: 21px;
 }
@@ -38,7 +35,6 @@
     height: 43px;
     border: 2px solid #909090;
     color: #909090;
-    /* color: #808080; */
     font-size: 14px;
     appearance: none;
     border-radius: 5px;
@@ -49,12 +45,8 @@
     color: #909090;
     opacity: 1;
 }
-/* .form__button {
-    margin-top: 20px;
-} */
 
 .form__button-submit {
-    /* margin-top: 30px; */
     padding: 10px 40px;
     width: 350px;
     height: 43px;
@@ -67,18 +59,11 @@
 }
 
 .register__button {
-    /* width: 100px;
-    height: 34px; */
     text-align: center;
-    /* line-height: 34px;
-    position: absolute;
-    right: 0;
-    margin-right: 50px; */
 }
 
 .register__message {
     color: #909090;
-    /* color: #808080; */
     font-size: 14px;
     margin: 0;
 }
@@ -89,27 +74,14 @@
     font-size: 14px;
 }
 
-/* @media screen and (max-width: 768px) {
-    p {
-        color: blue;
-    }
-} */
-
 /* レスポンシブ */
 @media screen and (max-width: 768px) {
     .login__content {
         padding: 100px 15px;
     }
-    /* .form {
-        padding: 30px 0;
-    } */
 }
 
 @media screen and (max-width: 480px) {
-    /* .login__content {
-        padding: 50px 15px;
-    } */
-
     .login-form__heading {
         font-size: 20px;
     }

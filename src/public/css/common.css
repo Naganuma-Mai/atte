@@ -13,13 +13,9 @@ button, input, select, textarea {
 .header__inner {
     margin: 0 auto;
     padding: 15px 75px;
-    /* height: 88px; */
     height: 11vh;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
-    /* justify-content: space-between; */
-    /* position: relative; */
 }
 
 .header-utilities {
@@ -30,31 +26,15 @@ button, input, select, textarea {
 }
 
 .header__logo {
-    /* font-weight: bold; */
     font-size: 32px;
     margin: 0;
-    /* line-height: 58px; */
 }
-
-/* .header-utilities nav {
-    width: 50%;
-} */
 
 .header-nav__list {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background: #F2F2F2;
-    position: fixed; */
 }
-
-/* .header-nav__item {
-    width: 25%;
-} */
-
-/* .header-nav-item {
-    margin-left: 40px;
-} */
 
 .header-nav__link {
     color: #000;
@@ -62,7 +42,6 @@ button, input, select, textarea {
     font-size: 16px;
     display: inline-block;
     margin-left: 45px;
-   /* font-weight: bold; */
 }
 
 .header-nav__form {
@@ -74,19 +53,16 @@ button, input, select, textarea {
     border: none;
     padding: 0;
     background: transparent;
-    /* color: #000; */
     font-size: 16px;
     cursor: pointer;
     /* 改行しない（スペースあるのになぜか改行されてしまうので指定） */
     white-space: pre;
     display: inline-block;
-    /* font-weight: bold; */
 }
 
 .footer__inner {
     margin: 0 auto;
     padding: 10px 0;
-    /* height: 40px; */
     height: 6vh;
     display: flex;
     justify-content: center;
@@ -107,16 +83,10 @@ button, input, select, textarea {
 }
 
 .pagination li:not(.active) {
-    /* border: 1px solid #E0DFDE; */
     border: 1px solid #E3E6E9;
     background-color: #FFFFFF;
     padding: 9px 16px;
-    /* padding: 10px 17px; */
 }
-
-/* .pagination li:not(:last-child) {
-    border-right: none;
-} */
 
 .pagination li:first-child {
     border-radius: 5px 0 0 5px;
@@ -139,7 +109,6 @@ button, input, select, textarea {
 
 .active {
     padding: 9px 16px;
-    /* padding: 10px 17px; */
     border: 1px solid #2384CF;
     background-color: #2384CF;
     color: #FFFFFF;
@@ -180,7 +149,6 @@ button, input, select, textarea {
 
     .footer__logo {
         font-size: 10px;
-        /* line-height: 10px; */
     }
 
     #btn {
@@ -205,10 +173,6 @@ button, input, select, textarea {
         transition: all 0.5s ease;
     }
 
-    /* #btn.on span {
-        background-color: #fff;
-    } */
-
     #btn.on span:nth-of-type(1) {
         transform: translateY(11px) rotate(45deg);
     }
@@ -225,7 +189,6 @@ button, input, select, textarea {
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        /* padding: 20px 0; */
         transition: all 0.5s ease;
         width: 100%;
         height: 100vh;

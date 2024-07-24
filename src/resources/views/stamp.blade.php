@@ -20,52 +20,32 @@
     <div class="stamp_inner">
         <form class="form" action="/attendances/create" method="post">
             @csrf
-            <!-- <div class="create-form__item">
-                <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-            </div> -->
             <div class="form__button">
                 <button class="form__button-submit" type="submit" id="work_start">勤務開始</button>
-                <!-- <button class="create-form__button-submit" type="submit" id="work_start" onclick="startWork()">勤務開始</button> -->
             </div>
         </form>
 
         <form class="form" action="/attendances/update" method="POST">
             @method('PATCH')
             @csrf
-            <!-- <div class="update-form__item">
-                <input type="hidden" name="id" value="{{ Auth::id() }}"> -->
-            <!-- </div> -->
             <div class="form__button">
                 <button class="form__button-submit" type="submit" id="work_end">勤務終了</button>
-                <!-- <button class="update-form__button-submit" type="submit" id="work_end" onclick="endWork()" disabled>勤務終了</button> -->
             </div>
         </form>
 
         <form class="form" action="/rests/create" method="post">
             @csrf
-            <!-- <div class="create-form__item">
-                <input type="hidden" name="attendance_id" value="{{ Auth::id() }}"> -->
-            <!-- </div> -->
             <div class="form__button">
                 <button class="form__button-submit" type="submit" id="rest_start">休憩開始</button>
             </div>
-            <!-- <div class="create-form__button">
-                <button class="create-form__button-submit" type="submit" id="rest_start" onclick="startRest()" disabled>休憩開始</button>
-            </div> -->
         </form>
 
         <form class="form" action="/rests/update" method="POST">
             @method('PATCH')
             @csrf
-            <!-- <div class="update-form__item">
-                <input type="hidden" name="id" value="{{ Auth::id() }}"> -->
-            <!-- </div> -->
             <div class="form__button">
                 <button class="form__button-submit" type="submit" id="rest_end">休憩終了</button>
             </div>
-            <!-- <div class="update-form__button">
-                <button class="update-form__button-submit" type="submit" id="rest_end" onclick="endRest()" disabled>休憩終了</button>
-            </div> -->
         </form>
 
         <script>
@@ -101,33 +81,6 @@
                         document.getElementById("rest_end").disabled = false;
                 }
             }
-            // function startWork() {
-            //     document.getElementById("work_start").disabled = true;
-            //     document.getElementById("work_end").disabled = false;
-            //     document.getElementById("rest_start").disabled = false;
-            //     document.getElementById("rest_end").disabled = true;
-            // }
-
-            // function endWork() {
-            //     document.getElementById("work_start").disabled = true;
-            //     document.getElementById("work_end").disabled = true;
-            //     document.getElementById("rest_start").disabled = true;
-            //     document.getElementById("rest_end").disabled = true;
-            // }
-
-            // function startRest() {
-            //     document.getElementById("work_start").disabled = true;
-            //     document.getElementById("work_end").disabled = true;
-            //     document.getElementById("rest_start").disabled = true;
-            //     document.getElementById("rest_end").disabled = false;
-            // }
-
-            // function endRest() {
-            //     document.getElementById("work_start").disabled = true;
-            //     document.getElementById("work_end").disabled = false;
-            //     document.getElementById("rest_start").disabled = false;
-            //     document.getElementById("rest_end").disabled = true;
-            // }
         </script>
     </div>
 </div>

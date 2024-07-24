@@ -1,7 +1,6 @@
 .user__content {
     margin: 0 auto;
     padding: 43px 15px;
-    /* height: 655px; */
     height: 83vh;
     background: #F2F2F2;
 }
@@ -9,13 +8,11 @@
 .user-heading {
     margin-bottom: 45px;
     text-align: center;
-    /* font-size: 35px; */
 }
 
 .user-heading__text {
     font-size: 21px;
     margin: 0;
-    /* text-align: center; */
 }
 
 .user-table {
@@ -26,13 +23,10 @@
 
 .user-table__inner {
     width: 100%;
-    /* border-spacing: 100px; */
-    /* font-size: 20px; */
 }
 
 .user-table__row {
     border-top: 1px solid #909090;
-    /* border-top: 1px solid #a9a9a9; */
 }
 
 .user-table__header,
@@ -42,16 +36,6 @@
     line-height: 30px;
 }
 
-/* .user-table__header:first-of-type,
-.user-table__text:first-of-type {
-    padding-left: 75px;
-}
-
-.user-table__header:last-of-type,
-.user-table__text:last-of-type {
-    padding-right: 75px;
-} */
-
 .form__button-submit {
     width: 75px;
     height: 30px;
@@ -59,7 +43,6 @@
     background: #FFFFFF;
     color: #214BE0;
     cursor: pointer;
-    /* font-size: 18px; */
     border-radius: 2px;
     display: flex;
     justify-content: center;
@@ -112,7 +95,6 @@
 
     .user-table__header,
     .user-table__text {
-        /* width: 33%; */
         padding: 15px 0 15px 7px;
         line-height: 20px;
         font-size: 11px;

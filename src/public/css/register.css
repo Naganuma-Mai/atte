@@ -1,13 +1,11 @@
 .register__content {
     margin: 0 auto;
     padding: 70px 15px;
-    /* height: 655px; */
     height: 83vh;
     background: #F2F2F2;
 }
 
 .register-form__heading {
-    /* margin-bottom: 50px; */
     text-align: center;
     font-size: 21px;
 }
@@ -53,7 +51,6 @@
 }
 
 .form__button-submit {
-    /* margin-top: 30px; */
     padding: 10px 40px;
     width: 350px;
     height: 43px;
@@ -66,13 +63,7 @@
 }
 
 .login__button {
-    /* width: 100px;
-    height: 34px; */
     text-align: center;
-    /* line-height: 34px;
-    position: absolute;
-    right: 0;
-    margin-right: 50px; */
 }
 
 .login__message {
@@ -95,10 +86,6 @@
 }
 
 @media screen and (max-width: 480px) {
-    /* .login__content {
-        padding: 50px 15px;
-    } */
-
     .register__content {
         padding: 50px 15px;
     }

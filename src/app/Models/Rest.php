@@ -11,7 +11,4 @@ class Rest extends Model
 
     protected $fillable = ['attendance_id', 'rest_start_time', 'rest_end_time'];
 
-    // public function getTotal(){
-    //     return 'ID'.$this->id . ':' . $this->title;
-    // }
 }

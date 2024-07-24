@@ -1,9 +1,7 @@
 .date__content {
     margin: 0 auto;
     padding: 43px 15px;
-    /* height: 655px; */
     height: 83vh;
-    /* max-width: 1230px; */
     background: #F2F2F2;
 }
 
@@ -12,8 +10,6 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 45px;
-    /* text-align: center; */
-    /* font-size: 35px; */
 }
 
 .date-heading__item {
@@ -29,27 +25,16 @@
     margin: 0 auto;
     width: 90%;
     text-align: center;
-    /* vertical-align: middle; */
 }
 
-/* .search-form__item {
-    display: flex;
-    justify-content: space-between;
-    vertical-align: top;
-} */
-
 .search-form__button-submit {
-    /* padding: 0; */
     width: 35px;
     height: 26px;
-    /* border: 1px solid #0000CD; */
     border: 1px solid #214BE0;
     background: #FFFFFF;
     color: #214BE0;
     cursor: pointer;
     font-size: 20px;
-    /* text-align: center; */
-    /* vertical-align: middle; */
     border-radius: 2px;
     display: flex;
     justify-content: center;
@@ -64,24 +49,15 @@
 
 .attendance-table__inner {
     width: 100%;
-    /* font-size: 20px; */
 }
 
 .attendance-table__row {
     border-top: 1px solid #909090;
-    /* border-top: 1px solid #a9a9a9; */
 }
-
-/* .contact-table__header {
-    padding: 12px;
-    text-align: left;
-    font-weight: bold;
-} */
 
 .attendance-table__header, .attendance-table__text {
     width: 20%;
     padding: 18px 0 18px 70px;
-    /* padding: 18px 40px; */
     line-height: 30px;
 }
 
@@ -117,22 +93,6 @@
         font-size: 20px;
     }
 
-    /* .attendance-table__inner {
-        writing-mode: vertical-lr;
-    } */
-/*
-    .attendance-table__row,
-    .attendance-table__header,
-    .attendance-table__text {
-        writing-mode: horizontal-tb;
-    } */
-
-    /* .attendance-table__header,
-    .attendance-table__text {
-        padding: 10px;
-        line-height: 15px;
-    } */
-
     .attendance-table {
         width: 95%;
     }
@@ -143,7 +103,6 @@
         padding: 15px 0 15px 7px;
         line-height: 20px;
         font-size: 11px;
-        /* white-space: nowrap; */
     }
 
     .attendance-table__header:first-of-type,

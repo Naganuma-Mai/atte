@@ -1,7 +1,6 @@
 .container {
     margin: 0 auto;
     padding: 70px;
-    /* height: 655px; */
     height: 83vh;
 }
 
@@ -13,15 +12,3 @@
     cursor: pointer;
     border-radius: 5px;
 }
-
-/* .form__button-submit {
-    padding: 10px 40px;
-    width: 100%;
-    height: 43px;
-    border: none;
-    background: #214BE0;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 5px;
-} */

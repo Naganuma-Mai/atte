@@ -16,8 +16,6 @@ use App\Http\Controllers\UserController;
 |
 */
 
-// Auth::routes(['verify' => true]);
-
 Route::middleware('verified')->group(function () {
     Route::get('/', [AttendanceController::class, 'index']);
     Route::get('/attendance', [AttendanceController::class, 'findByDate']);
