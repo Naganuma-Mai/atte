@@ -43,7 +43,7 @@ AtteはWeb上で打刻や勤怠データの閲覧ができる勤怠管理シス�
 
 - PHP8.3.2
 - Laravel8.83.8
-- MySQL10.3.39-MariaDB
+- MySQL8.0.26
 
 ## テーブル設計
 
